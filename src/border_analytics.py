@@ -1,7 +1,7 @@
 ## Import sys library to get the command shell arguments (input and output file names)
 import sys
 input_file_location = sys.argv[1]
-output_file_location = sys.argv[1]
+output_file_location = sys.argv[2]
 
 
 ### Define required functions
