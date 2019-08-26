@@ -91,7 +91,8 @@ def data_process(input_data_dictionary):
                 else:
                     # If key is not present then declare the value with a list of 12 values.
                     # Each value of the list represnts the month in chronological order
-                    value_months[yr] = [0,0,0,0,0,0,0,0,0,0,0,0] 
+                    value_months[yr] = [0,0,0,0,0,0,0,0,0,0,0,0]
+                    value_months[yr][int(mn)-1]= int(input_data_dictionary[border_key][measure_key][date_key])
 
             # Now based on value_months dictionary data the moving average is calculated and saved it into processed_data array
             # the second value of the input_data_dictionary value list represents the moving average
@@ -103,15 +104,15 @@ def data_process(input_data_dictionary):
                                                   (input_data_dictionary[border_key][measure_key][date_key]),
                                                   0,yr,mn))
                 elif (mn == 2):
-                    processed_data.append(data_point(border_key,date_key, measure_key,
+                    processed_data.append(data_point(border_key,date_key,measure_key,
                                                   (input_data_dictionary[border_key][measure_key][date_key]),
                                                   (value_months[yr][0]),yr,mn))
                 else:
                     a = sum(value_months[yr][0:int(mn)-1])
                     b = (int(mn)-1)
-                    processed_data.append(data_point(border_key,date_key, measure_key,
+                    processed_data.append(data_point(border_key,date_key,measure_key,
                                                   (input_data_dictionary[border_key][measure_key][date_key]),
-                                                  (round(a/b)),yr,mn))
+                                                  (-(-a//b)),yr,mn))
     return (processed_data)
 	
 
