@@ -44,9 +44,7 @@ Using the input file, this challenge requires to write a program to
 * Sum the total number of crossings (`Value`) of each type of vehicle or equipment, or passengers or pedestrians, that crossed the border that month, regardless of what port was used. 
 * Calculate the running monthly average of total crossings, rounded to the nearest whole number, for that combination of `Border` and `Measure`, or means of crossing.
 
-The prepared program write the requested output data to a file named `report.csv` in the `output` directory of this repository.
-
-A sample of the output file, `report.csv` is:
+The prepared program write the output data to a file named `report.csv` in the `output` directory of this repository. A sample output file is shown below:
 
 ```
 Border,Date,Measure,Value,Average
@@ -64,8 +62,6 @@ The lines should be sorted in descending order by
 * `Value` (or number of crossings)
 * `Measure`
 * `Border`
-
-The column, `Average`, is for the running monthly average of total crossings for that border and means of crossing in all previous months. In this example, to calculate the `Average` for the first line (i.e., running monthly average of total pedestrians crossing the US-Mexico Border in all of the months preceding March), you'd take the average sum of total number of US-Mexico pedestrian crossings in February `172,163` and January `56,810`, and round it to the nearest whole number `round(228,973/2) = 114,487`
 
 
 ## Repo directory structure
