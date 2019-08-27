@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Problem Statement](README.md#problem)
-1. [Input Dataset Information](README.md#Input Dataset Information)
+1. [Input Dataset Information](README.md#input)
 1. [Required Output](README.md#Required Output)
 1. [Repo directory structure](README.md#Repo directory structure)
 1. [Source Code Details](README.md#Source Code Details)
