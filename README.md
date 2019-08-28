@@ -95,7 +95,7 @@ The directory structure for this reposatory is:
 
 ## Analysis Procedure
 
-The algorithm that has been followed in described below:
+The analysis procedure is described below:
 
 1. Read the input file line by line
 2. Split the comma separated line into words or fields which will represent the eight different input fields
@@ -113,11 +113,11 @@ The main sourcecode is written in "border_analytics.py" file which is located in
 
 Firstly, "sys" package is imported to get the command shell arguments (input and output file names)
 
-'''
+```
 import sys
 input_file_location = sys.argv[1]
 output_file_location = sys.argv[2]
-'''
+```
 
 The first part of the codes defines all the required funcitons that are needed for this analysis. 
 Although those functioned can be written in a separate file, for a short code like this the author prefer to put it together. 
@@ -130,7 +130,7 @@ number of crossings (Value) of each type of measures, that crossed the border th
 Several test checks are also included to find any problem/irregularities with input data. The code will 
 return some Error message on such case. 
 
-'''
+```
 def read_input_file(input_file_location):
     # Define an empty dictionary
     input_data = {}
@@ -178,7 +178,7 @@ def read_input_file(input_file_location):
     
     except:
         return (print('ERROR: Check input file or file location'))
-'''
+```
 
     
 After importing the data, the data has been processed to get the moving average. The dictionary is iterated over border, 
@@ -187,7 +187,7 @@ moving average. This procedure is described in function named 'data_process_get_
 in a array which has data point from class 'data_point'. Therefore, the details of the 'data_point' class is described first.
 Point to be noted, the dictionary data is stored into a array considering a data class to make the sorting procedure easier. 
 
-'''
+```
 class data_point:
     def __init__(self, border,date, measure, value, average,year,month):
         self.border = border
@@ -258,13 +258,13 @@ def data_process_get_average(input_data):
                                                   0,_year,_month))
     return (processed_data)
     
-'''
+```
 
 The second part of the code process the data using the function mentioned above and 
 finally save into the output file named provided by the command shell argument. 
     
 
-'''
+```
 # Read the input data file and insert the data into a dictionary
 input_data = read_input_file(input_file_location)
 
@@ -290,9 +290,7 @@ try:
     output_file.close()
 except:
     print ("ERROR: Check output file or file location")
-'''
-
-
+```
 
 # Questions?
 If you have any question please email me at: miqba005@fiu.edu
