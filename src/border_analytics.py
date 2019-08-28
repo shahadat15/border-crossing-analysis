@@ -119,7 +119,7 @@ def data_process_get_average(input_data):
             for date_key in input_data[border_key][measure_key]:
                 _year = date_key.split(" ")[0].split("/")[2]
                 _month = int(date_key.split(" ")[0].split("/")[0])
-                if _month > 2:
+                if _month > 1:
                     _sum_previous_months = sum(value_months[_year][0:(_month-1)])
                     _number_of_previous_months = (_month-1)
                     _moving_average = (_sum_previous_months/_number_of_previous_months)
@@ -135,12 +135,6 @@ def data_process_get_average(input_data):
                                                   (input_data[border_key]
                                                   [measure_key][date_key]),
                                                   _moving_average_round,_year,_month))
-                elif _month == 2:
-                    processed_data.append(data_point
-                                          (border_key,date_key,measure_key, 
-                                                  (input_data[border_key]
-                                                  [measure_key][date_key]),
-                                                  (value_months[_year][0]),_year,_month))
                 else:
                     processed_data.append(data_point
                                           (border_key,date_key,measure_key,
